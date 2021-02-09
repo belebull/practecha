@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <!--About Section-->
+    <!--About Section for Early Career Women-->
     <div class="bg-gray-300 mt-24 py-16 md:py-32">
       <div class="flex flex-col items-center md:flex-row-reverse">
         <div class="md:w-2/5 md:ml-8">
@@ -41,9 +41,29 @@
             </p>
           </div>
         </div>
-        <div class="md:w-3/5 block bg-black h-36 w-26 md:w-auto md:h-auto">
-          hello
+        <div class="md:w-3/5 block bg-gray-500 h-64 w-full"></div>
+      </div>
+    </div>
+
+    <!--About section for engineers and companies-->
+    <div class="mt-24 py-16 md:py-32">
+      <div class="flex flex-col items-center md:flex-row">
+        <div class="w-full md:w-2/5">
+          <div class="font-header text-2xl text-center md:text-left">
+            ...while helping engineers and companies improve their technical
+            interviewing process.
+          </div>
+          <div class="font-body text-lg text-center my-8 md:text-left">
+            <p class="my-4">
+              We help engineers and companies improve their technical
+              interviewing process using feedback from early-career women. After
+              each interview, we provide interviewers with key insights and
+              action steps that over time will help them to conduct better
+              on-the-job interviews.
+            </p>
+          </div>
         </div>
+        <div class="block bg-gray-500 h-64 w-full md:w-3/5 md:ml-32"></div>
       </div>
     </div>
   </div>
