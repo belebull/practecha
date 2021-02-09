@@ -5,17 +5,16 @@
         <h1 class="font-header font-bold text-3xl md:text-5xl">Practecha</h1>
       </div>
       <div class="hidden md:block">
-        <a
-          href=""
-          class="block bg-gray-300 border-gray-500 h-16 w-48 rounded-md font-body text-lg md:text-xl text-center align-middle py-4"
-          >Join Waitlist</a
-        >
+        <primary-btn button-text="Join Waitlist" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import PrimaryBtn from './PrimaryBtn.vue'
+export default {
+  components: { PrimaryBtn },
+}
 </script>
 <style></style>
