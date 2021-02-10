@@ -68,27 +68,61 @@
     </div>
 
     <!--How it works section-->
-    <div>
+    <div class="flex flex-col items-center">
       <div class="font-header text-2xl text-center my-8">How We Work</div>
+      <!--Section Title for Mobile-->
       <div class="md:hidden text-center">
         <div class="font-header text-xl">{{ sectionTitle }}</div>
       </div>
+      <!--Section Buttons for Mobile-->
       <div class="md:hidden flex flex-row items-center my-8">
         <button
-          class="mx-4 block bg-blue-300 border-blue-500 h-24 w-48 rounded-md font-body px-4 py-4"
+          class="mx-2 md:mx-4 block bg-blue-300 border-blue-500 h-24 w-1/2 text-md rounded-md font-body px-4 py-4"
           @click="changeView(true)"
         >
           For Early-Career Women
         </button>
         <button
-          class="mx-4 block bg-blue-300 border-blue-500 h-24 w-48 rounded-md font-body px-4 py-4"
+          class="mx-2 md:mx-4 block bg-blue-300 border-blue-500 h-24 w-1/2 text-md rounded-md font-body px-4 py-4"
           @click="changeView(false)"
         >
           For Engineers
         </button>
       </div>
-      <div class="hidden md:block"></div>
-      <div>
+      <!--Single Columns for Mobbile-->
+      <div class="md:hidden text-center">
+        <ol v-show="viewWomen">
+          <li v-for="(item, index) in women" :key="index">
+            {{ index + 1 }}. {{ item }}
+          </li>
+        </ol>
+        <ol v-show="!viewWomen">
+          <li v-for="(item, index) in engineer" :key="index">
+            {{ index + 1 }}. {{ item }}
+          </li>
+        </ol>
+      </div>
+      <!--Double column for Tablet and Desktop-->
+      <div class="hidden md:block md:flex md:flex-row">
+        <div class="mx-4">
+          <div class="font-header text-xl">For Early-Career Women</div>
+          <ul>
+            <li v-for="(item, index) in women" :key="index">
+              {{ index + 1 }}. {{ item }}
+            </li>
+          </ul>
+        </div>
+        <div class="mx-4">
+          <div class="font-header text-xl">For Engineers</div>
+          <ul>
+            <li v-for="(item, index) in women" :key="index">
+              {{ index + 1 }}. {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--Join Waitlist Button-->
+      <div class="my-8">
         <primary-btn button-text="Join the waitlist"></primary-btn>
       </div>
     </div>
@@ -110,7 +144,7 @@ export default {
         'You get feedback from your interviewer and a third party to help your prep.',
         'You schedule another interview to build your confidence!',
       ],
-      engComp: [
+      engineer: [
         'Tell us what types of interviews you’re interested in leading. We love newbies and experienced interviewers!',
         'We’ll match you with an early-career woman for a mock interview.',
         'You complete a mock interview. You can test out new questions or we can help you come up with some.',
