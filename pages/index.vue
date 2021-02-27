@@ -1,38 +1,39 @@
 <template>
   <div>
     <menu-bar />
-    <div class="container mx-auto py-16 px-8 sm:px-auto">
+    <div class="container px-8 py-16 mx-auto sm:px-auto">
       <!---Hero Section--->
-      <div
-        class="mt-8 flex flex-col items-center md:items-start md:w-3/5 md:py-32"
-      >
-        <div
-          class="font-header text-3xl text-base font-extrabold md:text-4xl text-center md:text-left my-5"
-        >
-          We're making technical interviewing work for women and companies.
+      <div class="flex flex-col items-center justify-center lg:flex-row">
+        <div class="w-full mt-8 lg:w-2/5 lg:py-32">
+          <div
+            class="my-5 text-base text-3xl font-extrabold text-center font-header md:text-3xl lg:text-left"
+          >
+            We're making technical interviewing work for women and companies.
+          </div>
+          <div
+            class="mb-5 text-lg text-center text-dark-grey lg:text-left font-body md:text-2xl"
+          >
+            We help women build their technical interviewing skills through mock
+            interviews with engineers and companies looking to improve their
+            interviewing process.
+          </div>
+          <div class="justify-center">
+            <primary-btn button-text="Join Waitlist"></primary-btn>
+          </div>
         </div>
-        <div
-          class="text-center text-dark-grey md:text-left font-body text-lg md:text-2xl mb-5"
-        >
-          We help women build their technical interviewing skills through mock
-          interviews with engineers and companies looking to improve their
-          interviewing process.
-        </div>
-        <div class="">
-          <primary-btn button-text="Join Waitlist"></primary-btn>
-        </div>
+        <div class="w-full lg:w-3/5"><img src="~/static/convosvg.svg" /></div>
       </div>
 
       <!--About Section for Early Career Women-->
-      <div class="mt-24 py-16 md:py-32">
+      <div class="py-16 mt-24 md:py-32">
         <div class="flex flex-col items-center md:flex-row-reverse">
           <div class="md:w-2/5 md:ml-8">
             <div
-              class="font-header text-2xl text-center text-base font-bold md:text-left"
+              class="text-base text-2xl font-bold text-center font-header md:text-left"
             >
               Get the feedback you need to tackle you technical interviews...
             </div>
-            <div class="font-body text-lg text-center my-8 md:text-left">
+            <div class="my-8 text-lg text-center font-body md:text-left">
               <p class="my-4">
                 Women face unique challenges when it comes to technical
                 interviewing given a lack of peer support and mentorship. And
@@ -46,21 +47,21 @@
               </p>
             </div>
           </div>
-          <div class="md:w-3/5 block bg-gray-500 h-64 w-full"></div>
+          <div class="block w-full h-64 bg-gray-500 md:w-3/5"></div>
         </div>
       </div>
 
       <!--About section for engineers and companies-->
-      <div class="mt-24 py-16 md:py-32">
+      <div class="py-16 mt-24 md:py-32">
         <div class="flex flex-col items-center md:flex-row">
           <div class="w-full md:w-2/5">
             <div
-              class="font-header text-2xl text-center font-bold text-base md:text-left"
+              class="text-base text-2xl font-bold text-center font-header md:text-left"
             >
               ...while helping engineers and companies improve their technical
               interviewing process.
             </div>
-            <div class="font-body text-lg text-center my-8 md:text-left">
+            <div class="my-8 text-lg text-center font-body md:text-left">
               <p class="my-4">
                 We help engineers and companies improve their technical
                 interviewing process using feedback from early-career women.
@@ -70,43 +71,43 @@
               </p>
             </div>
           </div>
-          <div class="block bg-gray-500 h-64 w-full md:w-3/5 md:ml-32"></div>
+          <div class="block w-full h-64 bg-gray-500 md:w-3/5 md:ml-32"></div>
         </div>
       </div>
 
       <!--How it works section-->
       <div class="flex flex-col items-center md:mt-24 md:py-16 md:py-32">
-        <div class="font-header font-bold text-base text-3xl text-center my-12">
+        <div class="my-12 text-base text-3xl font-bold text-center font-header">
           How We Work
         </div>
         <!--Section Title for Mobile-->
-        <div class="md:hidden text-center">
-          <div class="font-header text-xl font-semibold text-base">
+        <div class="text-center md:hidden">
+          <div class="text-base text-xl font-semibold font-header">
             {{ sectionTitle }}
           </div>
         </div>
         <!--Section Buttons for Mobile-->
-        <div class="md:hidden flex flex-row items-center my-8">
+        <div class="flex flex-row items-center my-8 md:hidden">
           <button
-            class="mx-2 md:mx-4 block bg-white border border-base border-opacity-100 h-24 w-1/2 text-md rounded-md font-body px-4 py-4"
+            class="block w-1/2 h-24 px-4 py-4 mx-2 bg-white border border-opacity-100 rounded-md md:mx-4 border-base text-md font-body"
             @click="changeView(true)"
           >
             For Early-Career Women
           </button>
           <button
-            class="mx-2 md:mx-4 block bg-white border border-base border-opacity-100 h-24 w-1/2 text-md rounded-md font-body px-4 py-4"
+            class="block w-1/2 h-24 px-4 py-4 mx-2 bg-white border border-opacity-100 rounded-md md:mx-4 border-base text-md font-body"
             @click="changeView(false)"
           >
             For Engineers
           </button>
         </div>
         <!--Single Columns for Mobbile-->
-        <div class="md:hidden w-full">
+        <div class="w-full md:hidden">
           <ol v-show="viewWomen">
             <li
               v-for="(item, index) in women"
               :key="index"
-              class="text-lg my-4"
+              class="my-4 text-lg"
             >
               {{ index + 1 }}. {{ item }}
             </li>
@@ -115,7 +116,7 @@
             <li
               v-for="(item, index) in engineer"
               :key="index"
-              class="text-lg my-4"
+              class="my-4 text-lg"
             >
               {{ index + 1 }}. {{ item }}
             </li>
@@ -123,9 +124,9 @@
         </div>
         <!--Double column for Tablet and Desktop-->
         <div class="hidden md:block md:flex md:flex-row h:auto">
-          <div class="mx-4 w-1/2">
-            <div class="font-header text-xl my-4 text-center">
-              <span class="bg-base text-white p-4"
+          <div class="w-1/2 mx-4">
+            <div class="my-4 text-xl text-center font-header">
+              <span class="p-4 text-white bg-base"
                 >For Early-Career Women
               </span>
             </div>
@@ -133,21 +134,21 @@
               <li
                 v-for="(item, index) in women"
                 :key="index"
-                class="text-lg my-4 font-body text-dark-grey"
+                class="my-4 text-lg font-body text-dark-grey"
               >
                 {{ index + 1 }}. {{ item }}
               </li>
             </ul>
           </div>
-          <div class="mx-4 w-1/2">
-            <div class="font-header text-xl my-4 text-center">
-              <span class="bg-base text-white p-4">For Engineers</span>
+          <div class="w-1/2 mx-4">
+            <div class="my-4 text-xl text-center font-header">
+              <span class="p-4 text-white bg-base">For Engineers</span>
             </div>
             <ul class="my-16">
               <li
                 v-for="(item, index) in engineer"
                 :key="index"
-                class="font-body my-4 text-lg text-dark-grey"
+                class="my-4 text-lg font-body text-dark-grey"
               >
                 {{ index + 1 }}. {{ item }}
               </li>
