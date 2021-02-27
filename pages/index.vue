@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="font-custom">
     <menu-bar />
     <div class="container px-8 py-16 mx-auto sm:px-auto">
       <!---Hero Section--->
       <div class="flex flex-col items-center justify-center lg:flex-row">
         <div class="w-full mt-8 lg:w-2/5 lg:py-32">
           <div
-            class="my-5 text-base text-3xl font-extrabold text-center font-header md:text-3xl lg:text-left"
+            class="my-5 text-3xl font-extrabold text-center text-main md:text-3xl lg:text-left"
           >
             We're making technical interviewing work for women and companies.
           </div>
@@ -26,28 +26,34 @@
 
       <!--About Section for Early Career Women-->
       <div class="py-16 mt-24 md:py-32">
-        <div class="flex flex-col items-center md:flex-row-reverse">
-          <div class="md:w-2/5 md:ml-8">
-            <div
-              class="text-base text-2xl font-bold text-center font-header md:text-left"
-            >
+        <div class="flex flex-col items-center lg:flex-row-reverse">
+          <div class="w-full text-center lg:text-left lg:w-2/5 lg:ml-8">
+            <div class="my-8 text-2xl font-bold text-center text-main">
               Get the feedback you need to tackle you technical interviews...
             </div>
-            <div class="my-8 text-lg text-center font-body md:text-left">
-              <p class="my-4">
-                Women face unique challenges when it comes to technical
-                interviewing given a lack of peer support and mentorship. And
-                don’t even mention the isolation, imposter syndrome and bad
-                interviewers you have to deal with.
-              </p>
-              <p class="my-4">
-                That’s why we connect women starting out in tech with engineers
-                and peers prep through non-judgmental and beginner-friendly mock
-                interviews.
-              </p>
+            <div class="my-4 text-xl font-bold text-main">The Challenges</div>
+            <div class="text-xl text-dark-grey">
+              Women beginning their careers in software development face unique
+              barriers when it comes to technical interviewing, such as a lack
+              of mentorship, peer support, tools and vital feedback.
+            </div>
+            <ul>
+              <li v-for="item in challengeTiles" :key="item.icon" class="py-4">
+                <info-tile :icon-file="item.icon" :info-text="item.text" />
+              </li>
+            </ul>
+            <div class="pt-8 pb-4 text-xl font-bold text-main">
+              The Solution
+            </div>
+            <div class="text-xl text-dark-grey">
+              Here at Practecha, we working to remove those barriers for
+              early-career women through beginner-friendly mock interviews with
+              personalized feedback from current engineers and peers.
             </div>
           </div>
-          <div class="block w-full h-64 bg-gray-500 md:w-3/5"></div>
+          <div class="w-full lg:w-3/5">
+            <img src="~/static/desk.svg" alt="" />
+          </div>
         </div>
       </div>
 
@@ -55,13 +61,11 @@
       <div class="py-16 mt-24 md:py-32">
         <div class="flex flex-col items-center md:flex-row">
           <div class="w-full md:w-2/5">
-            <div
-              class="text-base text-2xl font-bold text-center font-header md:text-left"
-            >
+            <div class="text-2xl font-bold text-center text-main md:text-left">
               ...while helping engineers and companies improve their technical
               interviewing process.
             </div>
-            <div class="my-8 text-lg text-center font-body md:text-left">
+            <div class="my-8 text-lg text-center md:text-left">
               <p class="my-4">
                 We help engineers and companies improve their technical
                 interviewing process using feedback from early-career women.
@@ -77,12 +81,12 @@
 
       <!--How it works section-->
       <div class="flex flex-col items-center md:mt-24 md:py-16 md:py-32">
-        <div class="my-12 text-base text-3xl font-bold text-center font-header">
+        <div class="my-12 text-3xl font-bold text-center text-main font-header">
           How We Work
         </div>
         <!--Section Title for Mobile-->
         <div class="text-center md:hidden">
-          <div class="text-base text-xl font-semibold font-header">
+          <div class="text-xl font-semibold text-main font-header">
             {{ sectionTitle }}
           </div>
         </div>
@@ -165,10 +169,11 @@
 </template>
 
 <script>
+import InfoTile from '~/components/InfoTile.vue'
 import MenuBar from '~/components/MenuBar.vue'
 import PrimaryBtn from '~/components/PrimaryBtn.vue'
 export default {
-  components: { MenuBar, PrimaryBtn },
+  components: { MenuBar, PrimaryBtn, InfoTile },
   data() {
     return {
       women: [
@@ -189,6 +194,19 @@ export default {
       ],
       viewWomen: true,
       sectionTitle: 'For Early-Career Women',
+      challengeTiles: [
+        { icon: '~/static/icons/users.svg', text: 'Lack of mentorship' },
+        {
+          icon: '~/static/icons/livesaver.svg',
+          text: 'Few beginner friendly tools',
+        },
+        { icon: '~/static/icons/navigation.svg', text: 'Little feedback' },
+      ],
+      solutionTiles: [
+        { icon: 'target', text: 'Realistic mock interviews' },
+        { icon: 'heart', text: 'Made for beginners' },
+        { icon: 'filter', text: 'Personalized feedback' },
+      ],
     }
   },
   methods: {
