@@ -13,14 +13,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        header: 'Rubik',
+        header: 'Karla',
         body: 'Karla',
       },
       colors: {
-        base: '#320E3B',
-        accent: '#E8D7F1',
-        white: '#F9F8F9',
-        'dark-grey': '#403F40',
+        base: '#6B3399',
+        accent: '#D7D7FC',
+        'dark-grey': '#707070',
         'light-grey': '#D9D9D9',
       },
     },
