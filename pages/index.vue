@@ -130,83 +130,86 @@
 
       <!--How it works section-->
       <div class="flex flex-col items-center md:mt-24 md:py-16 md:py-32">
-        <div class="my-12 text-3xl font-bold text-center text-main font-header">
-          How We Work
+        <div class="mb-8 text-3xl font-bold text-center text-main font-header">
+          How It Works
         </div>
-        <!--Section Title for Mobile-->
-        <div class="text-center md:hidden">
-          <div class="text-xl font-semibold text-main font-header">
-            {{ sectionTitle }}
-          </div>
-        </div>
-        <!--Section Buttons for Mobile-->
-        <div class="flex flex-row items-center my-8 md:hidden">
+        <!--Section Buttons-->
+        <div class="flex flex-col items-center mb-8 md:flex-row">
           <button
-            class="block w-1/2 h-24 px-4 py-4 mx-2 bg-white border border-opacity-100 rounded-md md:mx-4 border-base text-md font-body"
+            class="block w-64 py-4 my-4 text-center border rounded-full md:mx-8 border-main text-main text-md hover:font-bold"
+            :class="{ active: isActive }"
             @click="changeView(true)"
           >
             For Early-Career Women
           </button>
           <button
-            class="block w-1/2 h-24 px-4 py-4 mx-2 bg-white border border-opacity-100 rounded-md md:mx-4 border-base text-md font-body"
+            class="block w-64 py-4 my-4 text-center border rounded-full md:mx-8 border-main text-main text-md hover:font-bold"
+            :class="{ active: !isActive }"
             @click="changeView(false)"
           >
-            For Engineers
+            For Engineers and Companies
           </button>
         </div>
-        <!--Single Columns for Mobbile-->
-        <div class="w-full md:hidden">
-          <ol v-show="viewWomen">
-            <li
-              v-for="(item, index) in women"
-              :key="index"
-              class="my-4 text-lg"
-            >
-              {{ index + 1 }}. {{ item }}
+        <!--Single Columns for Mobbile and Tablet-->
+        <div class="w-full lg:hidden">
+          <ul v-show="viewWomen">
+            <li v-for="(item, id) in ecwInstructions" :key="id" class="my-4">
+              <info-tile :info-text="item.text" :size="`large`" />
             </li>
-          </ol>
-          <ol v-show="!viewWomen">
-            <li
-              v-for="(item, index) in engineer"
-              :key="index"
-              class="my-4 text-lg"
-            >
-              {{ index + 1 }}. {{ item }}
+          </ul>
+          <ul v-show="!viewWomen">
+            <li v-for="(item, id) in ecInstructions" :key="id" class="my-4">
+              <info-tile :info-text="item.text" :size="`large`" />
             </li>
-          </ol>
+          </ul>
         </div>
-        <!--Double column for Tablet and Desktop-->
-        <div class="hidden md:block md:flex md:flex-row h:auto">
-          <div class="w-1/2 mx-4">
-            <div class="my-4 text-xl text-center font-header">
-              <span class="p-4 text-white bg-base"
-                >For Early-Career Women
-              </span>
+
+        <!--Two Columns for Desktop-->
+        <div class="hidden w-full lg:block">
+          <ul v-if="viewWomen">
+            <div class="flex flex-row items-begin">
+              <div class="w-1/2 mx-4">
+                <li
+                  v-for="(item, id) in ecwInstructions.slice(0, 3)"
+                  :key="id"
+                  class="my-4"
+                >
+                  <info-tile :info-text="item.text" :size="`large`" />
+                </li>
+              </div>
+              <div class="w-1/2 mx-4">
+                <li
+                  v-for="(item, id) in ecwInstructions.slice(3, 6)"
+                  :key="id"
+                  class="my-4"
+                >
+                  <info-tile :info-text="item.text" :size="`large`" />
+                </li>
+              </div>
             </div>
-            <ul class="my-16">
-              <li
-                v-for="(item, index) in women"
-                :key="index"
-                class="my-4 text-lg font-body text-dark-grey"
-              >
-                {{ index + 1 }}. {{ item }}
-              </li>
-            </ul>
-          </div>
-          <div class="w-1/2 mx-4">
-            <div class="my-4 text-xl text-center font-header">
-              <span class="p-4 text-white bg-base">For Engineers</span>
+          </ul>
+          <ul v-else>
+            <div class="flex flex-row items-begin">
+              <div class="w-1/2 mx-4">
+                <li
+                  v-for="(item, id) in ecInstructions.slice(0, 3)"
+                  :key="id"
+                  class="my-4"
+                >
+                  <info-tile :info-text="item.text" :size="`large`" />
+                </li>
+              </div>
+              <div class="w-1/2 mx-4">
+                <li
+                  v-for="(item, id) in ecInstructions.slice(3, 6)"
+                  :key="id"
+                  class="my-4"
+                >
+                  <info-tile :info-text="item.text" :size="`large`" />
+                </li>
+              </div>
             </div>
-            <ul class="my-16">
-              <li
-                v-for="(item, index) in engineer"
-                :key="index"
-                class="my-4 text-lg font-body text-dark-grey"
-              >
-                {{ index + 1 }}. {{ item }}
-              </li>
-            </ul>
-          </div>
+          </ul>
         </div>
         <!--Join Waitlist Button-->
         <div class="mt-16">
@@ -242,7 +245,7 @@ export default {
         'Complete another interview!',
       ],
       viewWomen: true,
-      sectionTitle: 'For Early-Career Women',
+      isActive: true,
       ecwChallengeTiles: [
         { icon: 'users', text: 'Lack of mentorship' },
         { icon: 'livesaver', text: 'Few beginner friendly tools' },
@@ -263,19 +266,80 @@ export default {
         { icon: 'check-circle', text: 'Train interviewers' },
         { icon: 'heart', text: 'Improve diversity' },
       ],
+      ecwInstructions: [
+        {
+          id: 1,
+          text:
+            'Tell us about your interview prep so far (no worries if you’re just starting out!) ',
+        },
+        {
+          id: 2,
+          text:
+            "We'll match you to an interviewer - either an engineer or a peer.",
+        },
+        {
+          id: 3,
+          text:
+            "Complete an interview! Don't worry - you're going to do great.",
+        },
+        {
+          id: 4,
+          text: 'Give some feedback to your interviewer after the session.',
+        },
+        {
+          id: 5,
+          text:
+            "We'll send you feedback from your interviewer and another mentor to help you prep.",
+        },
+        {
+          id: 6,
+          text: 'Get some practice by booking your next interview!',
+        },
+      ],
+      ecInstructions: [
+        {
+          id: 1,
+          text:
+            'Tell us what types of interviews you’re interested in leading. We love newbies and experienced interviewers!',
+        },
+        {
+          id: 2,
+          text:
+            'We’ll match you with an early-career woman for a mock interview.',
+        },
+        {
+          id: 3,
+          text:
+            "Complete an interview! Don't worry - we'll provide some tips on how to prepare.",
+        },
+        {
+          id: 4,
+          text: 'Give some feedback to your interviewee after the session.',
+        },
+        {
+          id: 5,
+          text:
+            "We'll send you feedback from your interviwee and another mentor to help conduct better interviews.",
+        },
+        {
+          id: 6,
+          text: 'Get some more practice by booking your next interview!',
+        },
+      ],
     }
   },
   methods: {
     changeView(newView) {
       this.viewWomen = newView
-      if (this.viewWomen === true) {
-        this.sectionTitle = 'For Early-Career Women'
-      } else {
-        this.sectionTitle = 'For Engineers'
-      }
+      this.isActive = newView
     },
   },
 }
 </script>
 
-<style></style>
+<style>
+.active {
+  background-color: #6b3399;
+  color: white;
+}
+</style>
