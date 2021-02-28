@@ -41,7 +41,7 @@
             </div>
             <ul class="my-4 text-center">
               <li
-                v-for="item in challengeTiles"
+                v-for="item in ecwChallengeTiles"
                 :key="item.icon"
                 class="inline-block py-4 mx-3"
               >
@@ -58,7 +58,7 @@
             </div>
             <ul class="my-4 text-center">
               <li
-                v-for="item in solutionTiles"
+                v-for="item in ecwSolutionTiles"
                 :key="item.icon"
                 class="inline-block py-4 mx-3"
               >
@@ -78,23 +78,53 @@
 
       <!--About section for engineers and companies-->
       <div class="py-16 mt-16 md:py-32">
-        <div class="flex flex-col items-center md:flex-row">
-          <div class="w-full md:w-2/5">
-            <div class="text-2xl font-bold text-center text-main md:text-left">
-              ...while helping engineers and companies improve their technical
-              interviewing process.
+        <div class="flex flex-col items-center lg:flex-row">
+          <div class="w-full lg:w-1/2">
+            <div class="text-2xl font-bold text-center text-main lg:text-left">
+              ...while also helping engineers and companies improve their
+              technical interviewing process.
             </div>
-            <div class="my-8 text-lg text-center md:text-left">
-              <p class="my-4">
-                We help engineers and companies improve their technical
-                interviewing process using feedback from early-career women.
-                After each interview, we provide interviewers with key insights
-                and action steps that over time will help them to conduct better
-                on-the-job interviews.
-              </p>
+            <div class="my-8 text-lg text-center lg:text-left">
+              <div class="my-4 text-xl font-bold text-main">The Challenges</div>
+              <div class="my-4 text-dark-grey">
+                We simply don’t believe in one-sided interviews. That’s why we
+                use feedback from early-career women to help engineers and
+                companies improve their technical interviewing process.
+              </div>
+              <ul class="my-4 text-center">
+                <li
+                  v-for="item in ecChallengeTiles"
+                  :key="item.icon"
+                  class="inline-block py-4 mx-3"
+                >
+                  <info-tile :icon-file="item.icon" :info-text="item.text" />
+                </li>
+              </ul>
+              <div class="my-4 text-xl font-bold text-main">The Solution</div>
+              <div class="my-4 text-dark-grey">
+                Understand what diverse candidates think of your interviewers
+                and gather data on how your process compares to others in your
+                field. Plus, companies and engineers can gain access to a
+                diverse pool of talented early-career women. #WinWin
+              </div>
+              <ul class="my-4 text-center">
+                <li
+                  v-for="item in ecSolutionTiles"
+                  :key="item.icon"
+                  class="inline-block py-4 mx-3"
+                >
+                  <info-tile :icon-file="item.icon" :info-text="item.text" />
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="block w-full h-64 bg-gray-500 md:w-3/5 md:ml-32"></div>
+          <div class="w-full my-8 text-center lg:w-1/2">
+            <img
+              src="../static/sitting.png"
+              alt="A woman sitting on a stool with a laptop and smelling a purple flower"
+              class="inline-block w-2/3 md:w-1/2 lg:w-4/5 lg:h-3/5"
+            />
+          </div>
         </div>
       </div>
 
@@ -213,15 +243,25 @@ export default {
       ],
       viewWomen: true,
       sectionTitle: 'For Early-Career Women',
-      challengeTiles: [
+      ecwChallengeTiles: [
         { icon: 'users', text: 'Lack of mentorship' },
         { icon: 'livesaver', text: 'Few beginner friendly tools' },
         { icon: 'navigation', text: 'Little to no feedback' },
       ],
-      solutionTiles: [
+      ecwSolutionTiles: [
         { icon: 'target', text: 'Realistic practice' },
         { icon: 'heart', text: 'Made for beginners' },
         { icon: 'filter', text: 'Personalized feedback' },
+      ],
+      ecChallengeTiles: [
+        { icon: 'dollar-sign', text: 'Expensive expirementation' },
+        { icon: 'user-x', text: 'No interview training' },
+        { icon: 'frown', text: 'Little diversity' },
+      ],
+      ecSolutionTiles: [
+        { icon: 'activity', text: 'Test your process' },
+        { icon: 'check-circle', text: 'Train interviewers' },
+        { icon: 'heart', text: 'Improve diversity' },
       ],
     }
   },
