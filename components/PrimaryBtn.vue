@@ -2,7 +2,7 @@
   <div>
     <a
       :href="href"
-      class="block bg-base text-white border-accent h-14 w-48 rounded-lg font-body text-lg hover:font-bold md:text-xl text-center align-middle py-4"
+      class="block w-48 py-4 text-lg text-center text-white align-middle rounded-lg bg-main border-accent h-14 font-body hover:font-bold md:text-xl"
       >{{ buttonText }}</a
     >
   </div>
