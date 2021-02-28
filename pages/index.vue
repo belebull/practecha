@@ -1,23 +1,19 @@
 <template>
   <div class="font-custom">
     <menu-bar />
-    <div class="container px-8 py-8 mx-auto sm:px-auto">
+    <div class="container px-8 mx-auto sm:px-auto">
       <!---Hero Section--->
-      <div class="flex flex-col items-center justify-center lg:flex-row">
-        <div class="w-full mt-8 lg:w-2/5 lg:py-32">
-          <div
-            class="my-5 text-3xl font-extrabold text-center text-main md:text-3xl lg:text-left"
-          >
+      <div class="flex flex-col items-center justify-center py-16 lg:flex-row">
+        <div class="w-full text-center lg:text-left lg:w-2/5">
+          <div class="my-5 text-3xl font-extrabold text-main md:text-3xl">
             We're making technical interviewing work for women and companies.
           </div>
-          <div
-            class="mb-5 text-lg text-center text-dark-grey lg:text-left font-body md:text-2xl"
-          >
+          <div class="mb-5 text-lg text-dark-grey font-body md:text-2xl">
             We help women build their technical interviewing skills through mock
             interviews with engineers and companies looking to improve their
             interviewing process.
           </div>
-          <div class="justify-center">
+          <div class="inline-block">
             <primary-btn button-text="Join Waitlist"></primary-btn>
           </div>
         </div>
@@ -25,7 +21,7 @@
       </div>
 
       <!--About Section for Early Career Women-->
-      <div class="py-16 mt-16 md:py-32">
+      <div class="py-16 mt-8">
         <div class="flex flex-col items-center lg:flex-row-reverse">
           <div class="w-full text-center lg:text-left lg:w-1/2 lg:ml-8">
             <div
@@ -77,7 +73,7 @@
       </div>
 
       <!--About section for engineers and companies-->
-      <div class="py-16 mt-16 md:py-32">
+      <div class="py-16 mt-8">
         <div class="flex flex-col items-center lg:flex-row">
           <div class="w-full lg:w-1/2">
             <div class="text-2xl font-bold text-center text-main lg:text-left">
@@ -129,7 +125,7 @@
       </div>
 
       <!--How it works section-->
-      <div class="flex flex-col items-center md:mt-24 md:py-16 md:py-32">
+      <div class="flex flex-col items-center mt-12">
         <div class="mb-8 text-3xl font-bold text-center text-main font-header">
           How It Works
         </div>
@@ -214,6 +210,33 @@
         <!--Join Waitlist Button-->
         <div class="mt-16">
           <primary-btn button-text="Join the waitlist"></primary-btn>
+        </div>
+      </div>
+    </div>
+    <!--Footer-->
+    <div
+      class="w-screen h-auto px-4 py-16 mt-20 lg:h-64 lg:px-40 lg:py-16 bg-main text-accent"
+    >
+      <div
+        class="flex flex-col items-center justify-center text-center lg:text-left lg:justify-between lg:flex-row"
+      >
+        <div>
+          <div class="text-3xl font-bold lg:text-4xl">Practecha</div>
+          <div class="text-xl lg:text-2xl">
+            Let's build a better technical interview process.
+          </div>
+        </div>
+        <div class="mt-8 lg:mt-0">
+          <div class="text-xl font-bold lg:text-2xl">Have Questions?</div>
+          <div class="text-xl lg:text-2xl">
+            Email us at
+            <a
+              href="mailto:hello@practecha.com"
+              class="hover:font-bold hover:underline"
+            >
+              hello@practecha.com</a
+            >!
+          </div>
         </div>
       </div>
     </div>
