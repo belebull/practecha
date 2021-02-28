@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-col items-center w-32 h-32 p-3 text-base rounded-lg bg-accent"
+    class="flex flex-col items-center w-32 h-32 p-3 text-base rounded-lg shadow-md bg-accent"
   >
-    <img :src="iconFile" alt="" />
-    <div class="text-md text-main">{{ infoText }}</div>
+    <img :src="getIconUrl()" alt="" />
+    <div class="my-2 text-center text-md text-main">{{ infoText }}</div>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     iconFile: {
       type: String,
       required: true,
-      default: '~/static/icons/users.svg',
+      default: 'users',
     },
     infoText: {
       type: String,
@@ -22,9 +22,8 @@ export default {
     },
   },
   methods: {
-    getIconUrl(icon) {
-      const iconPath = `@/static/icons/${icon}.svg`
-      return iconPath
+    getIconUrl() {
+      return require(`../static/icons/${this.iconFile}.svg`)
     },
   },
 }

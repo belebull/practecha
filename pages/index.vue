@@ -1,7 +1,7 @@
 <template>
   <div class="font-custom">
     <menu-bar />
-    <div class="container px-8 py-16 mx-auto sm:px-auto">
+    <div class="container px-8 py-8 mx-auto sm:px-auto">
       <!---Hero Section--->
       <div class="flex flex-col items-center justify-center lg:flex-row">
         <div class="w-full mt-8 lg:w-2/5 lg:py-32">
@@ -25,10 +25,12 @@
       </div>
 
       <!--About Section for Early Career Women-->
-      <div class="py-16 mt-24 md:py-32">
+      <div class="py-16 mt-16 md:py-32">
         <div class="flex flex-col items-center lg:flex-row-reverse">
-          <div class="w-full text-center lg:text-left lg:w-2/5 lg:ml-8">
-            <div class="my-8 text-2xl font-bold text-center text-main">
+          <div class="w-full text-center lg:text-left lg:w-1/2 lg:ml-8">
+            <div
+              class="my-8 text-2xl font-bold text-center text-main lg:text-left"
+            >
               Get the feedback you need to tackle you technical interviews...
             </div>
             <div class="my-4 text-xl font-bold text-main">The Challenges</div>
@@ -37,8 +39,12 @@
               barriers when it comes to technical interviewing, such as a lack
               of mentorship, peer support, tools and vital feedback.
             </div>
-            <ul>
-              <li v-for="item in challengeTiles" :key="item.icon" class="py-4">
+            <ul class="my-4 text-center">
+              <li
+                v-for="item in challengeTiles"
+                :key="item.icon"
+                class="inline-block py-4 mx-3"
+              >
                 <info-tile :icon-file="item.icon" :info-text="item.text" />
               </li>
             </ul>
@@ -50,15 +56,28 @@
               early-career women through beginner-friendly mock interviews with
               personalized feedback from current engineers and peers.
             </div>
+            <ul class="my-4 text-center">
+              <li
+                v-for="item in solutionTiles"
+                :key="item.icon"
+                class="inline-block py-4 mx-3"
+              >
+                <info-tile :icon-file="item.icon" :info-text="item.text" />
+              </li>
+            </ul>
           </div>
-          <div class="w-full lg:w-3/5">
-            <img src="~/static/desk.svg" alt="" />
+          <div class="w-full my-8 text-center lg:w-1/2">
+            <img
+              src="../static/desk.png"
+              alt="A woman sitting at a desk working on a laptop"
+              class="inline-block w-2/3 md:w-1/2 lg:w-4/5 lg:h-3/5"
+            />
           </div>
         </div>
       </div>
 
       <!--About section for engineers and companies-->
-      <div class="py-16 mt-24 md:py-32">
+      <div class="py-16 mt-16 md:py-32">
         <div class="flex flex-col items-center md:flex-row">
           <div class="w-full md:w-2/5">
             <div class="text-2xl font-bold text-center text-main md:text-left">
@@ -195,15 +214,12 @@ export default {
       viewWomen: true,
       sectionTitle: 'For Early-Career Women',
       challengeTiles: [
-        { icon: '~/static/icons/users.svg', text: 'Lack of mentorship' },
-        {
-          icon: '~/static/icons/livesaver.svg',
-          text: 'Few beginner friendly tools',
-        },
-        { icon: '~/static/icons/navigation.svg', text: 'Little feedback' },
+        { icon: 'users', text: 'Lack of mentorship' },
+        { icon: 'livesaver', text: 'Few beginner friendly tools' },
+        { icon: 'navigation', text: 'Little to no feedback' },
       ],
       solutionTiles: [
-        { icon: 'target', text: 'Realistic mock interviews' },
+        { icon: 'target', text: 'Realistic practice' },
         { icon: 'heart', text: 'Made for beginners' },
         { icon: 'filter', text: 'Personalized feedback' },
       ],

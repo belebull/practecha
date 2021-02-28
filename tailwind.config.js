@@ -21,6 +21,9 @@ module.exports = {
         'dark-grey': '#403F40',
         'light-grey': '#D9D9D9',
       },
+      scale: {
+        '-1': '-1',
+      },
     },
   },
   variants: {},
