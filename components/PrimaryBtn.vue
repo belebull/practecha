@@ -12,7 +12,10 @@
 export default {
   props: {
     buttonText: { type: String, default: 'Button' },
-    href: { type: String, default: 'https://www.practecha.com' },
+    href: {
+      type: String,
+      default: 'https://beleiciabullock.typeform.com/to/jYKkC1c3',
+    },
   },
 }
 </script>
