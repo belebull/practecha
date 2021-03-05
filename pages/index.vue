@@ -6,15 +6,14 @@
       <div class="flex flex-col items-center justify-center py-16 lg:flex-row">
         <div class="w-full text-center lg:text-left lg:w-2/5">
           <div class="my-5 text-3xl font-extrabold text-main md:text-3xl">
-            We're making technical interviewing work for women and companies.
+            Let's build a better technical interview process.
           </div>
           <div class="mb-5 text-lg text-dark-grey font-body md:text-2xl">
-            We help women build their technical interviewing skills through mock
-            interviews with engineers and companies looking to improve their
-            interviewing process.
+            We connect early-career women with engineers through mock interviews
+            to improve the technical interview process.
           </div>
           <div class="inline-block">
-            <primary-btn button-text="Join Waitlist"></primary-btn>
+            <primary-btn button-text="Join Beta"></primary-btn>
           </div>
         </div>
         <div class="w-full lg:w-3/5"><img src="~/static/convosvg.svg" /></div>
@@ -27,13 +26,13 @@
             <div
               class="my-8 text-2xl font-bold text-center text-main lg:text-left"
             >
-              Get the feedback you need to tackle you technical interviews...
+              We help early-career women prepare for technical interviews...
             </div>
-            <div class="my-4 text-xl font-bold text-main">The Challenges</div>
+            <!--<div class="my-4 text-xl font-bold text-main">The Challenges</div>-->
             <div class="text-xl text-dark-grey">
-              Women beginning their careers in software development face unique
-              barriers when it comes to technical interviewing, such as a lack
-              of mentorship, peer support, tools and vital feedback.
+              Women starting their software development careers
+              <span class="font-bold text-main">face unique barriers</span> when
+              it comes to technical interviewing.
             </div>
             <ul class="my-4 text-center">
               <li
@@ -44,13 +43,15 @@
                 <info-tile :icon-file="item.icon" :info-text="item.text" />
               </li>
             </ul>
-            <div class="pt-8 pb-4 text-xl font-bold text-main">
+            <!--<div class="pt-8 pb-4 text-xl font-bold text-main">
               The Solution
-            </div>
+            </div>-->
             <div class="text-xl text-dark-grey">
-              Here at Practecha, we working to remove those barriers for
-              early-career women through beginner-friendly mock interviews with
-              personalized feedback from current engineers and peers.
+              That's why we match women in college and junior roles with
+              engineers and peers for
+              <span class="font-bold text-main">
+                beginner-friendly mock interviews with personalized feedback </span
+              >.
             </div>
             <ul class="my-4 text-center">
               <li
@@ -77,15 +78,17 @@
         <div class="flex flex-col items-center lg:flex-row">
           <div class="w-full lg:w-1/2">
             <div class="text-2xl font-bold text-center text-main lg:text-left">
-              ...while also helping engineers and companies improve their
-              technical interviewing process.
+              ...while helping engineers and companies develop better technical
+              interviews.
             </div>
-            <div class="my-8 text-lg text-center lg:text-left">
-              <div class="my-4 text-xl font-bold text-main">The Challenges</div>
+            <div class="my-8 text-xl text-center lg:text-left">
+              <!--<div class="my-4 text-xl font-bold text-main">The Challenges</div>-->
               <div class="my-4 text-dark-grey">
-                We simply don’t believe in one-sided interviews. That’s why we
-                use feedback from early-career women to help engineers and
-                companies improve their technical interviewing process.
+                Developing a technical interview process is
+                <span class="font-bold text-main">hard work</span>. Not only do
+                companies struggle to engage with diverse candidates, but it is
+                also costly to expirement with different formats and train
+                engineers to be quality interviewers.
               </div>
               <ul class="my-4 text-center">
                 <li
@@ -96,12 +99,17 @@
                   <info-tile :icon-file="item.icon" :info-text="item.text" />
                 </li>
               </ul>
-              <div class="my-4 text-xl font-bold text-main">The Solution</div>
+              <!--<div class="my-4 text-xl font-bold text-main">The Solution</div>-->
               <div class="my-4 text-dark-grey">
-                Understand what diverse candidates think of your interviewers
-                and gather data on how your process compares to others in your
-                field. Plus, companies and engineers can gain access to a
-                diverse pool of talented early-career women. #WinWin
+                That's why we provide
+                <span class="font-bold text-main">
+                  feedback to train engineers
+                </span>
+                to be better interviewers and a
+                <span class="font-bold text-main">
+                  space for companies to expirement
+                </span>
+                with different formats and questions.
               </div>
               <ul class="my-4 text-center">
                 <li
@@ -209,7 +217,7 @@
         </div>
         <!--Join Waitlist Button-->
         <div class="mt-16">
-          <primary-btn button-text="Join the waitlist"></primary-btn>
+          <primary-btn button-text="Join Beta"></primary-btn>
         </div>
       </div>
     </div>
@@ -227,7 +235,7 @@
           </div>
         </div>
         <div class="mt-8 lg:mt-0">
-          <div class="text-xl font-bold lg:text-2xl">Have Questions?</div>
+          <div class="text-xl font-bold lg:text-2xl">Questions?</div>
           <div class="text-xl lg:text-2xl">
             Email us at
             <a
