@@ -6,14 +6,14 @@
       <div class="flex flex-col items-center justify-center py-16 lg:flex-row">
         <div class="w-full text-center lg:text-left lg:w-2/5">
           <div class="my-5 text-3xl font-extrabold text-main md:text-3xl">
-            Let's build a better technical interview process.
+            Find your technical interview prep buddy!
           </div>
           <div class="mb-5 text-lg text-dark-grey font-body md:text-2xl">
-            We connect early-career women with engineers through mock interviews
-            to improve the technical interview process.
+            We connect early-career women through mock interviews to help them
+            prepare for the technical interviews.
           </div>
           <div class="inline-block">
-            <primary-btn button-text="Join Beta"></primary-btn>
+            <primary-btn button-text="Join Cohort"></primary-btn>
           </div>
         </div>
         <div class="w-full lg:w-3/5"><img src="~/static/convosvg.svg" /></div>
@@ -26,11 +26,11 @@
             <div
               class="my-8 text-2xl font-bold text-center text-main lg:text-left"
             >
-              We help early-career women prepare for technical interviews...
+              We get it - technical interviews kinda (really) suck.
             </div>
             <!--<div class="my-4 text-xl font-bold text-main">The Challenges</div>-->
             <div class="text-xl text-dark-grey">
-              Women starting their software development careers
+              Plus, women starting their software development careers
               <span class="font-bold text-main">face unique barriers</span> when
               it comes to technical interviewing.
             </div>
@@ -46,12 +46,13 @@
             <!--<div class="pt-8 pb-4 text-xl font-bold text-main">
               The Solution
             </div>-->
-            <div class="text-xl text-dark-grey">
+            <div class="my-8 text-xl text-dark-grey">
               That's why we match women in college and junior roles with
               engineers and peers for
               <span class="font-bold text-main">
-                beginner-friendly mock interviews with personalized feedback </span
-              >.
+                beginner-friendly mock interviews with personalized
+                feedback.</span
+              >
             </div>
             <ul class="my-4 text-center">
               <li
@@ -74,7 +75,7 @@
       </div>
 
       <!--About section for engineers and companies-->
-      <div class="py-16 mt-8">
+      <!--<div class="py-16 mt-8">
         <div class="flex flex-col items-center lg:flex-row">
           <div class="w-full lg:w-1/2">
             <div class="text-2xl font-bold text-center text-main lg:text-left">
@@ -82,7 +83,7 @@
               interviews.
             </div>
             <div class="my-8 text-xl text-center lg:text-left">
-              <!--<div class="my-4 text-xl font-bold text-main">The Challenges</div>-->
+              <div class="my-4 text-xl font-bold text-main">The Challenges</div>
               <div class="my-4 text-dark-grey">
                 Developing a technical interview process is
                 <span class="font-bold text-main">hard work</span>. Not only do
@@ -99,7 +100,7 @@
                   <info-tile :icon-file="item.icon" :info-text="item.text" />
                 </li>
               </ul>
-              <!--<div class="my-4 text-xl font-bold text-main">The Solution</div>-->
+              <div class="my-4 text-xl font-bold text-main">The Solution</div>
               <div class="my-4 text-dark-grey">
                 That's why we provide
                 <span class="font-bold text-main">
@@ -130,15 +131,19 @@
             />
           </div>
         </div>
-      </div>
+      </div>-->
 
       <!--How it works section-->
       <div class="flex flex-col items-center mt-12">
         <div class="mb-8 text-3xl font-bold text-center text-main font-header">
-          How It Works
+          Join our 4-Week Cohort for $28!
+        </div>
+        <div class="w-1/2 mb-8 text-xl text-center text-main font-text">
+          We'll match you with another early-career woman to complete 4 mock
+          interviews and receive targeted feedback to improve your skills.
         </div>
         <!--Section Buttons-->
-        <div class="flex flex-col items-center mb-8 md:flex-row">
+        <!--<div class="flex flex-col items-center mb-8 md:flex-row">
           <button
             class="block w-64 py-4 my-4 text-center border rounded-full md:mx-8 border-main text-main text-md hover:font-bold"
             :class="{ active: isActive }"
@@ -153,7 +158,7 @@
           >
             For Engineers and Companies
           </button>
-        </div>
+        </div>-->
         <!--Single Columns for Mobbile and Tablet-->
         <div class="w-full lg:hidden">
           <ul v-show="viewWomen">
@@ -171,17 +176,17 @@
         <!--Two Columns for Desktop-->
         <div class="hidden w-full lg:block">
           <ul v-if="viewWomen">
-            <div class="flex flex-row items-begin">
-              <div class="w-1/2 mx-4">
-                <li
-                  v-for="(item, id) in ecwInstructions.slice(0, 3)"
-                  :key="id"
-                  class="my-4"
-                >
-                  <info-tile :info-text="item.text" :size="`large`" />
-                </li>
-              </div>
-              <div class="w-1/2 mx-4">
+            <!--<div class="flex items-begin">-->
+            <div class="grid mx-4 place-items-center">
+              <li
+                v-for="(item, id) in ecwInstructions.slice(0, 3)"
+                :key="id"
+                class="w-1/2 my-4"
+              >
+                <info-tile :info-text="item.text" :size="`large`" />
+              </li>
+              <!--</div>-->
+              <!--<div class="mx-4">
                 <li
                   v-for="(item, id) in ecwInstructions.slice(3, 6)"
                   :key="id"
@@ -189,7 +194,7 @@
                 >
                   <info-tile :info-text="item.text" :size="`large`" />
                 </li>
-              </div>
+              </div>-->
             </div>
           </ul>
           <ul v-else>
@@ -217,7 +222,7 @@
         </div>
         <!--Join Waitlist Button-->
         <div class="mt-16">
-          <primary-btn button-text="Join Beta"></primary-btn>
+          <primary-btn button-text="Join Cohort"></primary-btn>
         </div>
       </div>
     </div>
@@ -231,7 +236,7 @@
         <div>
           <div class="text-3xl font-bold lg:text-4xl">Practecha</div>
           <div class="text-xl lg:text-2xl">
-            Let's build a better technical interview process.
+            Let's tackle the technical interview process.
           </div>
         </div>
         <div class="mt-8 lg:mt-0">
@@ -259,22 +264,6 @@ export default {
   components: { MenuBar, PrimaryBtn, InfoTile },
   data() {
     return {
-      women: [
-        'Tell us about your interview prep so far (no worries if you’re just starting out!)',
-        'We match you with a peer or engineer for a mock interview.',
-        'You complete a mock interview. Don’t worry - you got this!',
-        'You provide feedback to your interviewer to help them improve.',
-        'You get feedback from your interviewer and a third party to help your prep.',
-        'You schedule another interview to build your confidence!',
-      ],
-      engineer: [
-        'Tell us what types of interviews you’re interested in leading. We love newbies and experienced interviewers!',
-        'We’ll match you with an early-career woman for a mock interview.',
-        'You complete a mock interview. You can test out new questions or we can help you come up with some.',
-        'You provide feedback to the interviewee to help them build their interview skills.',
-        'You receive feedback from your interviewee and a third-party to improve your interviewing skills.',
-        'Complete another interview!',
-      ],
       viewWomen: true,
       isActive: true,
       ecwChallengeTiles: [
@@ -301,31 +290,31 @@ export default {
         {
           id: 1,
           text:
-            'Tell us about your interview prep so far (no worries if you’re just starting out!) ',
+            'Tell us about your interview prep so far (no worries if you’re just starting out!)',
         },
         {
           id: 2,
           text:
-            "We'll match you to an interviewer - either an engineer or a peer.",
+            "We'll match you with another early-career woman for four mock interview sessions.",
         },
         {
           id: 3,
           text:
-            "Complete an interview! Don't worry - you're going to do great.",
+            "After each session, you'll provide and receive targeted feedback from your partner (and a third party if you choose to record your session).",
         },
-        {
-          id: 4,
-          text: 'Give some feedback to your interviewer after the session.',
-        },
-        {
-          id: 5,
-          text:
-            "We'll send you feedback from your interviewer and another mentor to help you prep.",
-        },
-        {
-          id: 6,
-          text: 'Get some practice by booking your next interview!',
-        },
+        // {
+        //   id: 4,
+        //   text: 'Give some feedback to your interviewer after the session.',
+        // },
+        // {
+        //   id: 5,
+        //   text:
+        //     "We'll send you feedback from your interviewer and another mentor to help you prep.",
+        // },
+        // {
+        //   id: 6,
+        //   text: 'Get some practice by booking your next interview!',
+        // },
       ],
       ecInstructions: [
         {

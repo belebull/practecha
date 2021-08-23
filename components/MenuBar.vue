@@ -7,7 +7,7 @@
         <h1 class="text-3xl font-bold font-header text-main">Practecha</h1>
       </div>
       <div class="hidden md:block">
-        <primary-btn button-text="Join Beta" />
+        <primary-btn button-text="Join Cohort" />
       </div>
     </div>
   </div>
